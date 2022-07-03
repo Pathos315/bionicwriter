@@ -2,7 +2,7 @@ from dataclasses import dataclass, field
 import logging
 from typing import Any
 import pdfplumber
-from nltk.tokenize import word_tokenize
+from nltk.tokenize import word_tokenize, SyllableTokenizer
 from math import ceil
 import random
 from datetime import datetime
@@ -22,6 +22,7 @@ reportlab.rl_config.warnOnMissingFontGlyphs = 0  # type: ignore
 from bionicwriter.config import BionicConfig
 from bionicwriter.dir import change_dir
 
+SSP = SyllableTokenizer
 now = datetime.now()
 date = now.strftime("%y%m%d")
 logger = logging.getLogger("bionicreadformatter")
@@ -94,7 +95,6 @@ class BionicWritePDF:
         It returns (as a list comprehension) a parsed and tokenized
         version of the text, with stopwords and names removed.
         """
-
         tokens: list[str] = word_tokenize(str(text_list))
         punctuation: list[str] = ['.',',','’',':','[',']',';']
         ptext: str = ''
@@ -106,7 +106,7 @@ class BionicWritePDF:
                 ptext += word.strip()
                 
             elif fixation >= self.min_fixation_length:
-                ptext += ' ' + f'<b>{word[:fixation]}</b>{word[fixation:]}'
+                ptext += ' ' + f'{word[:fixation]}<b>{word[fixation:]}</b>'
 
             else:
                 ptext += ' ' + word

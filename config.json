@@ -1,9 +1,9 @@
 {
     "target": "/Users/johnfallot/Desktop/Main Inbox/Renewing-American-Democracy-Navigating-A-Changing-Nation-Beyond-Conflict.pdf",
-    "export_dir": "/Users/johnfallot/blogpostwriter/exports",
-    "font_regular": "/Users/johnfallot/blogpostwriter/fonts/AtkinsonHyperlegible-Regular.ttf",
-    "font_bold": "/Users/johnfallot/blogpostwriter/fonts/AtkinsonHyperlegible-Bold.ttf",
-    "font_italic": "/Users/johnfallot/blogpostwriter/fonts/AtkinsonHyperlegible-Italic.ttf",
-    "font_bolditalic": "/Users/johnfallot/blogpostwriter/fonts/AtkinsonHyperlegible-BoldItalic.ttf",
-    "log_dir": "logger.py"
+    "export_dir": "./exports",
+    "font_regular": "./fonts/AtkinsonHyperlegible-Regular.ttf",
+    "font_bold": "./fonts/AtkinsonHyperlegible-Bold.ttf",
+    "font_italic": "./fonts/AtkinsonHyperlegible-Italic.ttf",
+    "font_bolditalic": "./fonts/AtkinsonHyperlegible-BoldItalic.ttf",
+    "log_dir": "./logger.py"
 }
